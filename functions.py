@@ -18,6 +18,7 @@ win={
 'draw' : 3,
 'win' : 6
 }
+
 player=[]
 opponent=[]
 
@@ -32,6 +33,8 @@ def getinput(file):
             
 
 def split_inputs(input):
+    global player
+    global opponent
     count=0
     input = input.split()
     while True:
@@ -39,10 +42,13 @@ def split_inputs(input):
             print('input is currently ' + input[count]+' at position: '+str(count))
             if (count %2) == 0:
                 player.append(input[count])
+                print(player)
             else:
                 opponent.append(input[count])
+                print(opponent)
             count+=1
         else:
             break
+    return [player, opponent]
         
 
