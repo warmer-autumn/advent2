@@ -21,14 +21,12 @@ win={
 }
 
 def getinput(file):
-    input = open('input.txt', 'r')
+    read = open('input.txt', 'r')
+    #read = open(file, 'r')
+    read = read.read().replace('\n', ' ')
+    print(read)
     count = 0
-    while True:
-        if count == 0: 
-            line = list.append(file.readline())
-        else:
-            line = list.append(file.readline())
-            
+    return read
 
 def split_inputs(input):
     player=[]
@@ -93,3 +91,4 @@ def rps(player, opponent):
         else:
             match = win['win']
         return match+choice
+    
