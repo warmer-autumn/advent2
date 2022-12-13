@@ -58,10 +58,9 @@ def matchup(player,opponent):
         #win = math['win']
         #choice = math['choice']
         total2 += math
-        #this is causing problems^^^^^^^^
-        print(total2)
         count+=1
-    
+    print(total2)
+    return total2
 
 def rps(player, opponent):
 
