@@ -1,17 +1,17 @@
 
 rock = {
-    'player': 'A',
-    'opponent': 'X',
+    'player': 'X',
+    'opponent': 'A',
     'score': 1
 }
 paper ={
-    'player': 'B',
-    'opponent':'Y',
+    'player': 'Y',
+    'opponent':'B',
     'score': 2
 }
 scissors ={
-    'player':'C',
-    'opponent':'Z',
+    'player':'Z',
+    'opponent':'C',
     'score': 3
 }
 win={
@@ -35,13 +35,13 @@ def split_inputs(input):
     input = input.split()
     while True:
         if count != len(input):
-            #print('input is currently ' + input[count]+' at position: '+str(count))
+            print('input is currently ' + input[count]+' at position: '+str(count))
             if (count %2) == 0:
-                player.append(input[count])
-                #print(player)
-            else:
                 opponent.append(input[count])
-                #print(opponent)
+                print(player)
+            else:
+                player.append(input[count])
+                print(opponent)
             count+=1
         else:
             break
@@ -49,7 +49,7 @@ def split_inputs(input):
         
 def matchup(player,opponent):
     count = 0
-    total = len(player)
+    total = len(opponent)
     total2 = 0
     while count != total:
         math = rps(player[count],opponent[count])
@@ -66,10 +66,13 @@ def rps(player, opponent):
         choice = rock['score']
         if opponent == rock['opponent']:
             match = win['draw']
+            print(match)
         if opponent == paper['opponent']:
             match = win['lose']
+            print(match)
         else:
             match = win['win']
+            print(match)
         return match+choice
     
     elif player == paper['player']:
