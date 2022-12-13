@@ -1,3 +1,4 @@
+
 rock = {
     'player': 'A',
     'opponent': 'X',
@@ -19,9 +20,6 @@ win={
 'win' : 6
 }
 
-player=[]
-opponent=[]
-
 def getinput(file):
     input = open('input.txt', 'r')
     count = 0
@@ -33,8 +31,8 @@ def getinput(file):
             
 
 def split_inputs(input):
-    global player
-    global opponent
+    player=[]
+    opponent=[]
     count=0
     input = input.split()
     while True:
@@ -51,4 +49,48 @@ def split_inputs(input):
             break
     return [player, opponent]
         
+def matchup(player,opponent):
+    count = 0
+    total = len(player)
+    total2 = 0
+    while count != total:
+        math = rps(player[count],opponent[count])
+        #win = math['win']
+        #choice = math['choice']
+        total2 += math
+        #this is causing problems^^^^^^^^
+        print(total2)
+        count+=1
+    
 
+def rps(player, opponent):
+
+    if player == rock['player']:
+        choice = rock['score']
+        if opponent == rock['opponent']:
+            match = win['draw']
+        if opponent == paper['opponent']:
+            match = win['lose']
+        else:
+            match = win['win']
+        return match+choice
+    
+    elif player == paper['player']:
+        choice = paper['score']
+        if opponent == paper['opponent']:
+            match = win['draw']
+        if opponent == scissors['opponent']:
+            match = win['lose']
+        else:
+            match = win['win']
+        return match+choice
+
+    elif player == scissors['player']:
+        choice = scissors['score']
+        if opponent == scissors['opponent']:
+            match = win['draw']
+        if opponent == rock['opponent']:
+            match = win['lose']
+        else:
+            match = win['win']
+        return match+choice
