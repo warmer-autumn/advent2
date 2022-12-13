@@ -38,10 +38,10 @@ def split_inputs(input):
             print('input is currently ' + input[count]+' at position: '+str(count))
             if (count %2) == 0:
                 opponent.append(input[count])
-                print(player)
+                #print(player)
             else:
                 player.append(input[count])
-                print(opponent)
+                #print(opponent)
             count+=1
         else:
             break
@@ -66,21 +66,22 @@ def rps(player, opponent):
         choice = rock['score']
         if opponent == rock['opponent']:
             match = win['draw']
-            print(match)
+            return match+choice
         if opponent == paper['opponent']:
             match = win['lose']
-            print(match)
+            return match+choice
         else:
             match = win['win']
-            print(match)
         return match+choice
     
     elif player == paper['player']:
         choice = paper['score']
         if opponent == paper['opponent']:
             match = win['draw']
+            return match+choice
         if opponent == scissors['opponent']:
             match = win['lose']
+            return match+choice
         else:
             match = win['win']
         return match+choice
@@ -89,8 +90,10 @@ def rps(player, opponent):
         choice = scissors['score']
         if opponent == scissors['opponent']:
             match = win['draw']
+            return match+choice
         if opponent == rock['opponent']:
             match = win['lose']
+            return match+choice
         else:
             match = win['win']
         return match+choice
