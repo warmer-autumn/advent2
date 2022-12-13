@@ -35,13 +35,13 @@ def split_inputs(input):
     input = input.split()
     while True:
         if count != len(input):
-            print('input is currently ' + input[count]+' at position: '+str(count))
+            #print('input is currently ' + input[count]+' at position: '+str(count))
             if (count %2) == 0:
                 player.append(input[count])
-                print(player)
+                #print(player)
             else:
                 opponent.append(input[count])
-                print(opponent)
+                #print(opponent)
             count+=1
         else:
             break
